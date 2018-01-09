@@ -2,7 +2,7 @@ Dockerfile documentation
 ========================
 
 This directory contains Dockerfiles to create new Docker images for
-running Verdi tests reproducibly.
+checking Coq projects reproducibly.
 
 The rest of this file explains how to build new Docker images.
 
