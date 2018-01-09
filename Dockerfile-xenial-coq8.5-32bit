@@ -13,8 +13,6 @@ RUN apt-get -qqy update \
 && apt-get -qqy install \
   software-properties-common \
   git \
-  gnuplot \
-  gawk \
   make \
   m4 \
   aspcud \
