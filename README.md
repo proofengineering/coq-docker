@@ -1,10 +1,10 @@
-Dockerfile documentation
-========================
+Dockerfiles for Coq
+===================
 
-This directory contains Dockerfiles to create new Docker images for
+This repository contains Dockerfiles to create new Docker images for
 checking Coq projects reproducibly.
 
-The rest of this file explains how to build new Docker images.
+To create these images, first [install Docker](https://docs.docker.com/engine/installation/). Then follow the instructions below.
 
 Preliminaries
 -------------
@@ -32,16 +32,13 @@ alias create_upload_docker_image=' \
   mkdir -p dockerdir && \
   (cd dockerdir && \
   \cp -pf ../Dockerfile-$OS-$COQVER Dockerfile && \
-  docker build -t palmskog/$OS-$COQVER . && \
-  docker push palmskog/$OS-$COQVER) && \
+  docker build -t $DOCKERID/$OS-$COQVER . && \
+  docker push $DOCKERID/$OS-$COQVER) && \
   rm -rf dockerdir'
 
+export DOCKERID=<DockerID>
 export OS=xenial
 export COQVER=coq8.5
-create_upload_docker_image
-
-export OS=xenial
-export COQVER=coq8.5-32bit
 create_upload_docker_image
 ```
 
