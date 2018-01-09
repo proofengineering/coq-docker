@@ -25,4 +25,4 @@ RUN apt-get -qqy update \
 && rm -rf /var/lib/apt/lists/* \
 && opam init --compiler=4.06.0 --yes --auto-setup \
 && eval `opam config env` \
-&& opam install lablgtk camlp5 num \
+&& opam install lablgtk camlp5 num --yes \
