@@ -22,7 +22,7 @@ RUN apt-get -qqy update \
 && rm -rf /var/lib/apt/lists/* \
 && opam init --compiler=4.05.0 --yes --no-setup \
 && eval $(opam config env) \
-&& echo '. /root/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true' >> ~/profile \
+&& echo '. /root/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true' >> ~/.profile \
 && opam repo add coq-released https://coq.inria.fr/opam/released \
 && opam repo add distributedcomponents-dev http://opam-dev.distributedcomponents.net \
 && opam pin add coq 8.5.3 --yes \
