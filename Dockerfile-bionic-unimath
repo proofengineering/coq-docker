@@ -1,0 +1,24 @@
+# Create a Docker image that is ready to run UniMath
+
+# Use Ubuntu LTS version.
+FROM ubuntu:bionic
+MAINTAINER Karl Palmskog <palmskog@gmail.com>
+
+RUN apt-get -qqy update \
+&& apt-get -qqy install \
+  software-properties-common \
+  git \
+  make \
+  m4 \
+  aspcud \
+  ocaml \
+  opam \
+  time \
+  libgtk2.0-dev \
+  libgtksourceview2.0-dev \
+  emacs \
+&& apt-get clean \
+&& rm -rf /var/lib/apt/lists/* \
+&& opam init --compiler=4.06.0 --yes --auto-setup \
+&& eval `opam config env` \
+&& opam install lablgtk camlp5 num --yes \
