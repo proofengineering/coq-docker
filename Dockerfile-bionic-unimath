@@ -19,6 +19,6 @@ RUN apt-get -qqy update \
   emacs \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* \
-&& opam init --compiler=4.06.0 --yes --auto-setup \
+&& opam init --compiler=4.07.0 --yes --auto-setup \
 && eval `opam config env` \
 && opam install lablgtk camlp5 num --yes \
